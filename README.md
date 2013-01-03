@@ -9,7 +9,7 @@ Dependencies
 - Numpy
 - pygrib
 - scipy.interpolate
-- requests (for get_gfs.pl)
+- requests (for get_gfs.py)
 
 Documentation
 -------------
