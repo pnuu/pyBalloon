@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyb_traj</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;pyb_traj
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyb_traj-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module pyb_traj</h1><p class="nomargin-top"><span class="codelink"><a href="pyb_traj-pysrc.html">source&nbsp;code</a></span></p>
+<p>Functions used by pyBalloon to calculate balloon trajectories</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_traj-module.html#calc_movements" class="summary-sig-name">calc_movements</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">loc0</span>,
+        <span class="summary-sig-arg">balloon</span>,
+        <span class="summary-sig-arg">live_data</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">alt_change_fit</span>=<span class="summary-sig-default">10</span>)</span><br />
+      Calculate needed data and trajectory for a balloon.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_traj-pysrc.html#calc_movements">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_traj-module.html#movement2ll" class="summary-sig-name">movement2ll</a>(<span class="summary-sig-arg">lat_rad</span>,
+        <span class="summary-sig-arg">lon_rad</span>,
+        <span class="summary-sig-arg">alt</span>,
+        <span class="summary-sig-arg">dx</span>,
+        <span class="summary-sig-arg">dy</span>)</span><br />
+      Calculate new lat/lon coordinates from Cartesian dx (east positive) 
+      and dy (north positive) displacements.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_traj-pysrc.html#movement2ll">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="calc_movements"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calc_movements</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">loc0</span>,
+        <span class="sig-arg">balloon</span>,
+        <span class="sig-arg">live_data</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">alt_change_fit</span>=<span class="sig-default">10</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_traj-pysrc.html#calc_movements">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate needed data and trajectory for a balloon. Data from live 
+  balloon flight can be used to replace past model values. In this case, 
+  the trajectory will be calculated starting from the last known real 
+  location.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- dictionary containing atmospheric data
+    </li>
+    <li>
+      loc0 -- initial location of the balloon
+    </li>
+    <li>
+      balloon -- dictionary containing balloon parameters
+    </li>
+  </ul>
+  <p>Optional arguments:</p>
+  <ul>
+    <li>
+      live_data -- live data from balloon with 'lats', 'lons', 'alts'
+    </li>
+    <li>
+      alt_change_fit -- number of points to use for determining if the
+    </li>
+    <li>
+      balloon is going up or down. Default: 10
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Dictionary containing calculated trajectory of the balloon containing
+      'lats', 'lons', 'alts', 'times' and 'distance'
+    </li>
+  </ul>
+  <p>Todo:</p>
+  <p>If live data are present: * Primary features re: live data</p>
+  <ul>
+    <li>
+      set existing trajectory from live data
+    </li>
+    <li>
+      calculate movement starting from latest known position:
+    </li>
+  </ul>
+  <p>lats_live[-1], lons_live[-1], alts_live[-1] * Secondary features re: 
+  live data</p>
+  <ul>
+    <li>
+      if pressure and/or temperature are known, use (also) those values for
+      (initial? initial and descent?) lift calculations (aaargh?)
+    </li>
+    <li>
+      calculate wind components from live data, use for descent
+    </li>
+    <li>
+      same for existing pressure/temperature data
+    </li>
+    <li>
+      or adjust model data with this data?
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="movement2ll"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">movement2ll</span>(<span class="sig-arg">lat_rad</span>,
+        <span class="sig-arg">lon_rad</span>,
+        <span class="sig-arg">alt</span>,
+        <span class="sig-arg">dx</span>,
+        <span class="sig-arg">dy</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_traj-pysrc.html#movement2ll">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate new lat/lon coordinates from Cartesian dx (east positive) 
+  and dy (north positive) displacements. Calculation is done using 
+  Haversine formula with radius derived from WGS84 reference ellipsoid with
+  altitude added to it.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      lat_rad -- Current latitude in radians
+    </li>
+    <li>
+      lon_rad -- Current longitude in radians
+    </li>
+    <li>
+      alt -- Current altitude, in meters
+    </li>
+    <li>
+      dx -- East - west movement in meters (east positive)
+    </li>
+    <li>
+      dy -- North - south movement in meters (north positive)
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      New coordinates: latitude [radians], longitude [radians], and 
+      distance traveled [km]
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jan  3 14:07:13 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pyb_aux</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;pyb_aux
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pyb_aux-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module pyb_aux</h1><p class="nomargin-top"><span class="codelink"><a href="pyb_aux-pysrc.html">source&nbsp;code</a></span></p>
+<p>Auxiliary functions used in pyBalloon</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#all_and" class="summary-sig-name">all_and</a>(<span class="summary-sig-arg">data</span>)</span><br />
+      Logical and for a list of arrays.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#all_and">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#earth_radius" class="summary-sig-name">earth_radius</a>(<span class="summary-sig-arg">lat_rad</span>)</span><br />
+      Calculate Earth WGS84 based radius on a given latitude.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#earth_radius">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#air_density" class="summary-sig-name">air_density</a>(<span class="summary-sig-arg">data</span>)</span><br />
+      Calculate air density from pressure and temperature.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#air_density">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#data_interpolation" class="summary-sig-name">data_interpolation</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">alt0</span>,
+        <span class="summary-sig-arg">step</span>,
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">spline</code><code class="variable-quote">'</code></span>)</span><br />
+      Interpolate (and extrapolate in the low end, if mode='spline' is 
+      used) vertical data from alt0 to maximum level present in the data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#data_interpolation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#lift" class="summary-sig-name">lift</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">mass</span>)</span><br />
+      Calculate effective lift (force, in Newtons) caused by the balloon.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#lift">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#balloon_volume" class="summary-sig-name">balloon_volume</a>(<span class="summary-sig-arg">data</span>)</span><br />
+      Calculate volume of a sphere.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#balloon_volume">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#balloon_volume_ideal_gas" class="summary-sig-name">balloon_volume_ideal_gas</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">gas_mass</span>,
+        <span class="summary-sig-arg">gas_molar_mass</span>=<span class="summary-sig-default">4.002602</span>)</span><br />
+      Calculate gas (~balloon) volume based on ideal gas law: pV = nRT.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#balloon_volume_ideal_gas">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#burst_altitude" class="summary-sig-name">burst_altitude</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">burst_radius</span>)</span><br />
+      Find the altitude where balloon radius gets greater than the given 
+      burst radius.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#burst_altitude">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#neutral_buoyancy_level" class="summary-sig-name">neutral_buoyancy_level</a>(<span class="summary-sig-arg">data</span>)</span><br />
+      Find the level of neutral buoyancy (or more precise, the level where 
+      effective lift is closest to zero).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#neutral_buoyancy_level">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#ascent_speed" class="summary-sig-name">ascent_speed</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">mass</span>,
+        <span class="summary-sig-arg">Cd</span>=<span class="summary-sig-default">0.47</span>)</span><br />
+      Calculate the rate of ascent (in m/s) for the inflated balloon at 
+      given levels.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#ascent_speed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#descent_speed" class="summary-sig-name">descent_speed</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">mass</span>,
+        <span class="summary-sig-arg">Cd</span>,
+        <span class="summary-sig-arg">areas</span>,
+        <span class="summary-sig-arg">change_alt</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Calculate the rate of descent for deflated (burst) balloon with 1 or 
+      2 different sized parachutes with given areas, change altitude and 
+      drag-coefficient.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#descent_speed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pyb_aux-module.html#mooney_rivlin" class="summary-sig-name">mooney_rivlin</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">radius_empty</span>,
+        <span class="summary-sig-arg">radius_filled</span>,
+        <span class="summary-sig-arg">thickness_empty</span>,
+        <span class="summary-sig-arg">gas_molar_mass</span>=<span class="summary-sig-default">4.002602</span>)</span><br />
+      Calculate balloon radii for given pressures/temperatures/initial 
+      conditions using inversion of Mooney-Rivlin equation.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pyb_aux-pysrc.html#mooney_rivlin">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="g_0"></a><span class="summary-name">g_0</span> = <code title="9.80665">9.80665</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="R_e"></a><span class="summary-name">R_e</span> = <code title="6371009">6371009</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="R"></a><span class="summary-name">R</span> = <code title="8.3144621">8.3144621</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="M_air"></a><span class="summary-name">M_air</span> = <code title="0.0289644">0.0289644</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="M_helium"></a><span class="summary-name">M_helium</span> = <code title="4.002602">4.002602</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Cd_sphere"></a><span class="summary-name">Cd_sphere</span> = <code title="0.47">0.47</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="all_and"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">all_and</span>(<span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#all_and">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Logical and for a list of arrays.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- list of Numpy boolean arrays
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      result -- Logical and of all given arrays
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="earth_radius"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">earth_radius</span>(<span class="sig-arg">lat_rad</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#earth_radius">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate Earth WGS84 based radius on a given latitude.</p>
+  
+  <p>http://en.wikipedia.org/wiki/Earth_radius#Radius_at_a_given_geodetic_latitude</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="air_density"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">air_density</span>(<span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#air_density">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate air density from pressure and temperature.</p>
+  <p>Required argument:</p>
+  <ul>
+    <li>
+      data -- Dictionary returned by read_gfs_data()
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Air densities (as Numpy array) for each altitude step in data.
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="data_interpolation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">data_interpolation</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">alt0</span>,
+        <span class="sig-arg">step</span>,
+        <span class="sig-arg">mode</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">spline</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#data_interpolation">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Interpolate (and extrapolate in the low end, if mode='spline' is used)
+  vertical data from alt0 to maximum level present in the data.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary returned by read_gfs_data()
+    </li>
+    <li>
+      alt0 -- Starting altitude of the interpolation in meters from WGS84 
+      reference ellipsoid
+    </li>
+    <li>
+      step -- Interpolation altitude step
+    </li>
+  </ul>
+  <p>Optional arguments:</p>
+  <ul>
+    <li>
+      mode -- Interpolation method. Supported methods are 'spline' and 
+      'linear'. Default: 'spline'
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Interpolated version of the data.
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="lift"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lift</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">mass</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#lift">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate effective lift (force, in Newtons) caused by the 
+  balloon.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary containing 'altitudes' (meters), balloon 'volumes'
+      (m^3) and 'air_densities' (kg/m^3)
+    </li>
+    <li>
+      mass -- Mass of the whole balloon
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Resultant lift force.
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="balloon_volume"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">balloon_volume</span>(<span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#balloon_volume">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate volume of a sphere.</p>
+  <p>Required argument:</p>
+  <ul>
+    <li>
+      data -- Dictionary containing 'balloon_radii' (in meters)
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Volume of the balloon at each level in data
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="balloon_volume_ideal_gas"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">balloon_volume_ideal_gas</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">gas_mass</span>,
+        <span class="sig-arg">gas_molar_mass</span>=<span class="sig-default">4.002602</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#balloon_volume_ideal_gas">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate gas (~balloon) volume based on ideal gas law: pV = nRT.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary returned by read_gfs_data()
+    </li>
+    <li>
+      gas_mass -- Mass of the gas in question
+    </li>
+  </ul>
+  <p>Optional arguments:</p>
+  <ul>
+    <li>
+      gas_molar_mass -- Gas molar mask (g/mol). Default: 4.002602 (Helium)
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Gas volume at each level in data
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="burst_altitude"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">burst_altitude</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">burst_radius</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#burst_altitude">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Find the altitude where balloon radius gets greater than the given 
+  burst radius.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary containing 'altitudes' and corresponding 
+      'balloon_radii'
+    </li>
+    <li>
+      burst_radius -- Balloon burst radius
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Altitude of burst and corresponding array index
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="neutral_buoyancy_level"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">neutral_buoyancy_level</span>(<span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#neutral_buoyancy_level">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Find the level of neutral buoyancy (or more precise, the level where 
+  effective lift is closest to zero).</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary containing 'altitudes' and corresponding 'lifts'
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Altitude of neutral buoyancy and corresponding array index
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="ascent_speed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ascent_speed</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">mass</span>,
+        <span class="sig-arg">Cd</span>=<span class="sig-default">0.47</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#ascent_speed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate the rate of ascent (in m/s) for the inflated balloon at 
+  given levels.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary with 'altitudes' and corresponding 
+      'air_densities', 'balloon_radii' and 'balloon_volumes'
+    </li>
+    <li>
+      mass -- Full balloon mass (in kg)
+    </li>
+  </ul>
+  <p>Optional arguments:</p>
+  <ul>
+    <li>
+      Cd -- Coefficient of drag. Default: 0.47 (sphere)
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Ascent speed (m/s) at every level in input data.
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="descent_speed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">descent_speed</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">mass</span>,
+        <span class="sig-arg">Cd</span>,
+        <span class="sig-arg">areas</span>,
+        <span class="sig-arg">change_alt</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#descent_speed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate the rate of descent for deflated (burst) balloon with 1 or 2
+  different sized parachutes with given areas, change altitude and 
+  drag-coefficient.</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary with 'altitudes', and corresponding 
+      'air_densities'
+    </li>
+    <li>
+      mass -- Mass of the payload + assumed remnants of the balloon
+    </li>
+    <li>
+      Cd -- Coefficients of drag for one or two parachutes in a tuple
+    </li>
+    <li>
+      areas -- Effective areas (in m^2) of one or two parachutes in a tuple
+    </li>
+  </ul>
+  <p>Optional arguments:</p>
+  <ul>
+    <li>
+      change_alt -- Altitude where first parachute is changed to the second
+      one. If None, only one parachute is used. Default: None
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Rate of descent (m/s) for each level in input data
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="mooney_rivlin"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mooney_rivlin</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">radius_empty</span>,
+        <span class="sig-arg">radius_filled</span>,
+        <span class="sig-arg">thickness_empty</span>,
+        <span class="sig-arg">gas_molar_mass</span>=<span class="sig-default">4.002602</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pyb_aux-pysrc.html#mooney_rivlin">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate balloon radii for given pressures/temperatures/initial 
+  conditions using inversion of Mooney-Rivlin equation.</p>
+  <p>See description of the equation at: 
+  http://www.zmatt.net/weather-balloon-physics/</p>
+  <p>Required arguments:</p>
+  <ul>
+    <li>
+      data -- Dictionary containing 'pressures' and 'temperatures'
+    </li>
+    <li>
+      radius_empty -- Radius of the empty balloon
+    </li>
+    <li>
+      radius_filled -- Radius when filled at ground level
+    </li>
+    <li>
+      thickness_empty -- Balloon rubber initial thickness
+    </li>
+  </ul>
+  <p>Optional arguments:</p>
+  <ul>
+    <li>
+      gas_molar_mass -- Molar mass (g/mol) of the gas used to fill the 
+      balloon. Default: 4.002602 (Helium)
+    </li>
+  </ul>
+  <p>Return:</p>
+  <ul>
+    <li>
+      Radius of the balloon at each level in input data, and the mass of 
+      the gas.
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu Jan  3 14:07:13 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
