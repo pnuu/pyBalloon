@@ -96,7 +96,7 @@
 <a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                                    <tt class="py-op">(</tt><tt class="py-name">lat0</tt><tt class="py-op">+</tt><tt class="py-number">1.5</tt><tt class="py-op">,</tt> <tt class="py-name">lon0</tt><tt class="py-op">-</tt><tt class="py-number">1.5</tt><tt class="py-op">,</tt>  </tt>
 <a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">                                     <tt class="py-name">lat0</tt><tt class="py-op">-</tt><tt class="py-number">0.5</tt><tt class="py-op">,</tt> <tt class="py-name">lon0</tt><tt class="py-op">+</tt><tt class="py-number">1.5</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
-<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'GFS data read, '</tt><tt class="py-op">,</tt> <tt class="py-string">'%.1f'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">time0</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'s elapsed'</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'GFS data read, %.1f s elapsed'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">time0</tt><tt class="py-op">)</tt> </tt>
 <a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
 <a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-name">loc0</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">lat0</tt><tt class="py-op">,</tt> <tt class="py-name">lon0</tt><tt class="py-op">,</tt> <tt class="py-name">alt0</tt><tt class="py-op">)</tt> </tt>
 <a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
@@ -104,82 +104,81 @@
 <a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">data</tt> <tt class="py-keyword">in</tt> <tt class="py-name">model_data</tt><tt class="py-op">:</tt> </tt>
 <a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">trajectories</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name"><a title="pyb_traj" class="py-name" href="#" onclick="return doclink('link-4', 'pyb_traj', 'link-1');">pyb_traj</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Function pyb_traj.calc_movements()=pyb_traj-module.html#calc_movements"><a title="pyb_traj.calc_movements" class="py-name" href="#" onclick="return doclink('link-5', 'calc_movements', 'link-5');">calc_movements</a></tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">loc0</tt><tt class="py-op">,</tt> <tt class="py-name">balloon</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
 <a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
-<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'Trajectories calculated, '</tt><tt class="py-op">,</tt> <tt class="py-string">'%.1f'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">time0</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> \ </tt>
-<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-string">'s elapsed'</tt> </tt>
-<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
-<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-name">kml_fname</tt> <tt class="py-op">=</tt> <tt class="py-string">'/tmp/pyballoon_trajectories.kml'</tt> </tt>
-<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt id="link-6" class="py-name"><a title="pyb_io" class="py-name" href="#" onclick="return doclink('link-6', 'pyb_io', 'link-0');">pyb_io</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Function pyb_io.save_kml()=pyb_io-module.html#save_kml"><a title="pyb_io.save_kml" class="py-name" href="#" onclick="return doclink('link-7', 'save_kml', 'link-7');">save_kml</a></tt><tt class="py-op">(</tt><tt class="py-name">kml_fname</tt><tt class="py-op">,</tt> <tt class="py-name">trajectories</tt><tt class="py-op">)</tt> </tt>
-<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">     </tt>
-<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'Program finished in '</tt><tt class="py-op">,</tt> <tt class="py-string">'%.1f'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">time0</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'s'</tt> </tt>
-<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
-<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
-<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">    while True:</tt> </tt>
-<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">        # Read real balloon trajectory if available</tt> </tt>
-<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-string">        if live_data_fname is not None:</tt> </tt>
-<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-string">            live_data = read_live_data(live_data_fname)</tt> </tt>
-<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
-<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string">        trajectories = []</tt> </tt>
-<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-string">        for data in model_data:</tt> </tt>
-<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-string">            trajectories.append(calc_movements(data, </tt> </tt>
-<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-string">                                               loc0, </tt> </tt>
-<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string">                                               balloon, </tt> </tt>
-<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-string">                                               live_data=live_data))</tt> </tt>
-<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
-<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-string">        save_kml(kml_fname, trajectories)</tt> </tt>
-<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string">        time.sleep(60)</tt> </tt>
-<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
-<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
-<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
-<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-string">    print np.min(data['u_winds_std']), np.max(data['u_winds_std']), \</tt> </tt>
-<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-string">        np.min(data['v_winds_std']), np.max(data['v_winds_std'])</tt> </tt>
-<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
-<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
-<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
-<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-string">    np.savez('result.npz', all_lats=all_lats, all_lons=all_lons, </tt> </tt>
-<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-string">             all_alts=all_alts, total_time=total_time, \</tt> </tt>
-<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-string">             distance_travelled=distance_travelled)</tt> </tt>
-<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
-<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
-<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
-<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-string">    for i in range(0, num_random+1):</tt> </tt>
-<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-string">        print "%3.1f %3.1f %2.3f %2.3f" % (</tt> </tt>
-<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-string">            total_time[-1], distance_travelled[i],</tt> </tt>
-<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-string">            all_lats[-1, i], all_lons[-1, i])</tt> </tt>
-<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
-<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
-<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
-<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-string">    t = total_time</tt> </tt>
-<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-string">    fig = plt.figure()</tt> </tt>
-<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-string">    ax = fig.gca()</tt> </tt>
-<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-string">    ax.set_aspect('equal')</tt> </tt>
-<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-string">    plt.plot(all_lons, all_lats, 'b')</tt> </tt>
-<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-string">    plt.xlabel('Longitude')</tt> </tt>
-<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-string">    plt.ylabel('Latitude')</tt> </tt>
-<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-string">    plt.show()</tt> </tt>
-<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
-<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-string">'''</tt> </tt>
-<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-string">    fig = plt.figure()</tt> </tt>
-<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-string">    m = Basemap(projection='stere', lon_0=25, lat_0=60, lat_ts=60, </tt> </tt>
-<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-string">                llcrnrlat=59.9, urcrnrlat=61.5, </tt> </tt>
-<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-string">                llcrnrlon=24.5, urcrnrlon=26,</tt> </tt>
-<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-string">                rsphere=6371200.,resolution='l',area_thresh=10000)</tt> </tt>
-<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-string">    m.drawcoastlines()</tt> </tt>
-<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-string">    m.drawcountries()</tt> </tt>
-<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-string">    i = 0</tt> </tt>
-<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-string">    trajectories.reverse()</tt> </tt>
-<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-string">    for t in trajectories:</tt> </tt>
-<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-string">        x, y = m(t['lons'], t['lats'])</tt> </tt>
-<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-string">        if i == len(trajectories)-1:</tt> </tt>
-<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-string">            plt.plot(x, y, 'r')</tt> </tt>
-<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-string">        else:</tt> </tt>
-<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-string">            plt.plot(x, y, 'k.')</tt> </tt>
-<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-string">        i += 1</tt> </tt>
-<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-string">    #plt.ylabel('Latitude (deg)')</tt> </tt>
-<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-string">    #plt.xlabel('Longitude (deg)')</tt> </tt>
-<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-string">    #plt.legend(['U','V','Total'])</tt> </tt>
-<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-string">    plt.show()</tt> </tt>
-<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-string">    '''</tt> </tt>
-<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'Trajectories calculated, %.1f s elapsed'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">time0</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">    <tt class="py-name">kml_fname</tt> <tt class="py-op">=</tt> <tt class="py-string">'/tmp/pyballoon_trajectories.kml'</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt id="link-6" class="py-name"><a title="pyb_io" class="py-name" href="#" onclick="return doclink('link-6', 'pyb_io', 'link-0');">pyb_io</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Function pyb_io.save_kml()=pyb_io-module.html#save_kml"><a title="pyb_io.save_kml" class="py-name" href="#" onclick="return doclink('link-7', 'save_kml', 'link-7');">save_kml</a></tt><tt class="py-op">(</tt><tt class="py-name">kml_fname</tt><tt class="py-op">,</tt> <tt class="py-name">trajectories</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">     </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">'Program finished in %.1f s'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">time0</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-string">    while True:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-string">        # Read real balloon trajectory if available</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-string">        if live_data_fname is not None:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-string">            live_data = read_live_data(live_data_fname)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-string">        trajectories = []</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-string">        for data in model_data:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-string">            trajectories.append(calc_movements(data, </tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-string">                                               loc0, </tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-string">                                               balloon, </tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-string">                                               live_data=live_data))</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-string">        save_kml(kml_fname, trajectories)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-string">        time.sleep(60)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-string">    print np.min(data['u_winds_std']), np.max(data['u_winds_std']), \</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-string">        np.min(data['v_winds_std']), np.max(data['v_winds_std'])</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-string">    np.savez('result.npz', all_lats=all_lats, all_lons=all_lons, </tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-string">             all_alts=all_alts, total_time=total_time, \</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-string">             distance_travelled=distance_travelled)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-string">    for i in range(0, num_random+1):</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-string">        print "%3.1f %3.1f %2.3f %2.3f" % (</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-string">            total_time[-1], distance_travelled[i],</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-string">            all_lats[-1, i], all_lons[-1, i])</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-string">"""</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-string">    t = total_time</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-string">    fig = plt.figure()</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-string">    ax = fig.gca()</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-string">    ax.set_aspect('equal')</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-string">    plt.plot(all_lons, all_lats, 'b')</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-string">    plt.xlabel('Longitude')</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-string">    plt.ylabel('Latitude')</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-string">    plt.show()</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-string">    """</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt class="py-string">'''</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-string">    fig = plt.figure()</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-string">    m = Basemap(projection='stere', lon_0=25, lat_0=60, lat_ts=60, </tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-string">                llcrnrlat=59.9, urcrnrlat=61.5, </tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-string">                llcrnrlon=24.5, urcrnrlon=26,</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-string">                rsphere=6371200.,resolution='l',area_thresh=10000)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-string">    m.drawcoastlines()</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-string">    m.drawcountries()</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-string">    i = 0</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-string">    trajectories.reverse()</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-string">    for t in trajectories:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-string">        x, y = m(t['lons'], t['lats'])</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-string">        if i == len(trajectories)-1:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-string">            plt.plot(x, y, 'r')</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-string">        else:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-string">            plt.plot(x, y, 'k.')</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-string">        i += 1</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-string">    #plt.ylabel('Latitude (deg)')</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-string">    #plt.xlabel('Longitude (deg)')</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-string">    #plt.legend(['U','V','Total'])</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-string">    plt.show()</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-string">    '''</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -209,7 +208,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Jan  3 14:07:13 2013
+    Generated by Epydoc 3.0.1 on Fri Jan  4 20:35:38 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

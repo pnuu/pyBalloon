@@ -24,11 +24,12 @@ pyb_aux.descent_speed	pyb_aux-module.html#descent_speed
 pyb_aux.R_e	pyb_aux-module.html#R_e
 pyb_aux.air_density	pyb_aux-module.html#air_density
 pyb_io	pyb_io-module.html
+pyb_io.get_sounding	pyb_io-module.html#get_sounding
+pyb_io.save_kml	pyb_io-module.html#save_kml
 pyb_io.read_gfs_file	pyb_io-module.html#read_gfs_file
 pyb_io.__package__	pyb_io-module.html#__package__
 pyb_io.read_gfs_set	pyb_io-module.html#read_gfs_set
 pyb_io.read_live_data	pyb_io-module.html#read_live_data
-pyb_io.save_kml	pyb_io-module.html#save_kml
 pyb_traj	pyb_traj-module.html
 pyb_traj.calc_movements	pyb_traj-module.html#calc_movements
 pyb_traj.movement2ll	pyb_traj-module.html#movement2ll

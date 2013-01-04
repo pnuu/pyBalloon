@@ -1,5 +1,7 @@
-README for pyBalloon
-====================
+pyBalloon
+=========
+
+Python scripts that can be used to simulate trajectories of tropospheric weather balloons.
 
 Dependencies
 ------------
@@ -7,7 +9,7 @@ Dependencies
 - Numpy
 - pygrib
 - scipy.interpolate
-- requests (for get_gfs.py)
+- requests
 
 Documentation
 -------------

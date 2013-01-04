@@ -102,13 +102,25 @@ def data_interpolation(data, alt0, step, mode='spline'):
         if key != 'altitudes' and key != 'lats' and key != 'lons':
             new_arr = []
             d = data[key]
-            x, y = d.shape
+            try:
+                x, y = d.shape
+            except ValueError:
+                x = 0
+                y, = d.shape
+
             if mode == 'spline':
-                for i in range(0, y):
-                    tck = interpolate.splrep(altitudes[:, i], d[:, i])
+                if x > 0:
+                    for i in range(0, y):
+                        tck = interpolate.splrep(altitudes[:, i], d[:, i])
+                        new_arr.append(np.array(interpolate.splev( \
+                                    new_data['altitudes'], tck)))
+                else:
+                    tck = interpolate.splrep(altitudes, d)
                     new_arr.append(np.array(interpolate.splev( \
-                            new_data['altitudes'], tck)))
+                                new_data['altitudes'], tck)))
+
             else: # use linear interpolation
+                # There's something wrong here:
                 for i in range(0, y):
                     for i in range(0, len(d)):
                         tck = interpolate.interp1d(altitudes[:, i], d[:, i])
@@ -365,18 +377,42 @@ def mooney_rivlin(data, radius_empty, radius_filled,
     a0 = -2*mu*t0*(r0**6)
     
     all_radii = []
-    x, y = p.shape
 
-    for i in range(0, x):
-        radii = []
-        for j in range(0, y):
-            a4 = -3*n[j]*R/(4*np.pi)
+    try:
+        x, y = p.shape
+        
+        for i in range(0, x):
+            radii = []
+            for j in range(0, y):
+                a4 = -3*n[j]*R/(4*np.pi)
+                # 8th degree polynomial
+                poly = [a8,        # r^8
+                        p[i,j],    # r^7
+                        a6,        # r^6
+                        0,         # r^5
+                        a4*T[i,j], # r^4
+                        0,         # r^3
+                        a2,        # r^2
+                        0,         # r^1
+                        a0]        # r^0
+
+                roots = np.roots(poly)
+        
+                for r in roots:
+                    if r.real > 0 and r.imag == 0:
+                        radii.append(r.real)
+            all_radii.append(np.array(radii))
+
+
+    except ValueError:        
+        for i in range(0, len(p)):
+            a4 = -3*n*R/(4*np.pi)
             # 8th degree polynomial
             poly = [a8,        # r^8
-                    p[i,j],    # r^7
+                    p[i],    # r^7
                     a6,        # r^6
                     0,         # r^5
-                    a4*T[i,j], # r^4
+                    a4*T[i], # r^4
                     0,         # r^3
                     a2,        # r^2
                     0,         # r^1
@@ -386,10 +422,10 @@ def mooney_rivlin(data, radius_empty, radius_filled,
         
             for r in roots:
                 if r.real > 0 and r.imag == 0:
-                    radii.append(r.real)
-        all_radii.append(np.array(radii))
+                    all_radii.append(r.real)
 
     all_radii = np.array(all_radii)
+
 
     return all_radii, gas_mass
 

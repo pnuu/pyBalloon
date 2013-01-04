@@ -5,6 +5,7 @@ import os
 from glob import glob
 import csv
 import pyb_aux
+import requests
 
 def read_gfs_file(fname, area=None, alt0=0, t_0=None, extra_data=None):
     """Collect relevant information from GFS model.
@@ -213,6 +214,72 @@ def read_gfs_set(directory, area=None, alt0=0, main='gfs_main.grib2',
                                               extra_data=None))
 
     return all_data
+
+
+def get_sounding(station_id, date, utc_hour):
+    """Get sounding data using station ID, date and time.
+
+    Data are retrived from Universio of Wyoming. Valid times depend on
+    the station, normal sounding times are 00 and 12 UTC, or 06 and
+    18 UTC.
+
+    Required arguments:
+        - station_id -- ID of the station: number or air-port code
+        - date -- Date as 3-tuple (yyyy, mm, dd), eg. (2013, 3, 18)
+        - utc_hour -- UTC hour of the requested sounding eg. 6
+
+    Returns:
+        - Dictionary containing station coordinates, 'u_winds',
+          'v_wind', 'temperatures', 'altitudes' and 'pressures' as
+          Numpy arrays
+    """
+
+    knots2ms = 0.514
+
+    year, month, day = date[0], date[1], date[2]
+
+    url = 'http://weather.uwyo.edu/cgi-bin/sounding?' + \
+        'TYPE=TEXT%3ALIST&YEAR=' + str(year) + '&MONTH=' + \
+        '%02d' % month + '&FROM=' + '%02d%02d' % (day, utc_hour) + \
+        '&TO=' + '%02d%02d' % (day, utc_hour) + '&STNM=' + str(station_id)
+
+    req = requests.get(url)
+    text  = req.text
+    station_lat = float(text.split('Station latitude: ')[-1].split('\n')[0])
+    station_lon = float(text.split('Station longitude: ')[-1].split('\n')[0])
+    data = text.split('<PRE>')[1].split('</PRE>')[0].split('\n')
+    data = data[5:] # only the numerical rows
+    
+    pressures = []
+    altitudes = []
+    temperatures = []
+    u_winds = []
+    v_winds = []
+
+    for row in data:
+        nums = row.split()
+        if len(nums) == 11:
+            pressures.append(float(nums[0]))
+            altitudes.append(float(nums[1]))
+            temperatures.append(273.15+float(nums[2]))
+        
+            wdir = np.radians(float(nums[6]))
+            wspd = float(nums[7])*knots2ms
+        
+            # Towards North and East are positive
+            u_winds.append(-1*wspd*np.sin(wdir))
+            v_winds.append(-1*wspd*np.cos(wdir))
+
+    data = {}
+    data['lats'] = np.array(station_lat)
+    data['lons'] = np.array(station_lon)
+    data['u_winds'] = np.array(u_winds)
+    data['v_winds'] = np.array(v_winds)
+    data['temperatures'] = np.array(temperatures)
+    data['pressures'] = 100*np.array(pressures)
+    data['altitudes'] = np.array(altitudes)
+
+    return data
 
 
 def read_live_data(fname, delimiter=',', temp_conv=(1, 0),
