@@ -40,13 +40,16 @@ if __name__ == "__main__":
 
     model_data = pyb_io.read_gfs_set(in_dir, 
                                     (lat0+1.5, lon0-1.5, 
-                                     lat0-0.5, lon0+1.5))
+                                     lat0-0.5, lon0+1.5),
+                                     ens_main=None,
+                                     ens_member_pattern=None, alt0=alt0)
 
     print 'GFS data read, %.1f s elapsed' % (time.time() - time0)
 
     loc0 = (lat0, lon0, alt0)
 
     trajectories = []
+
     for data in model_data:
         trajectories.append(pyb_traj.calc_movements(data, loc0, balloon))
 

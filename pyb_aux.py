@@ -102,6 +102,7 @@ def data_interpolation(data, alt0, step, mode='spline'):
         if key != 'altitudes' and key != 'lats' and key != 'lons':
             new_arr = []
             d = data[key]
+
             try:
                 x, y = d.shape
             except ValueError:
@@ -111,7 +112,9 @@ def data_interpolation(data, alt0, step, mode='spline'):
             if mode == 'spline':
                 if x > 0:
                     for i in range(0, y):
-                        tck = interpolate.splrep(altitudes[:, i], d[:, i])
+                        ok_idxs = altitudes[:, i] >= alt0
+                        tck = interpolate.splrep(altitudes[ok_idxs, i], 
+                                                 d[ok_idxs, i])
                         new_arr.append(np.array(interpolate.splev( \
                                     new_data['altitudes'], tck)))
                 else:
