@@ -3,7 +3,7 @@ import sys
 import requests
 import datetime as dt
 
-def get_gfs_data(datestr, utc_hour, area):
+def get_gfs_data(datestr, utc_hour, area, verbose=False):
     """Download GFS data from NOMADS-NOAA for requested time and area.
 
     Required arguments:
@@ -22,26 +22,24 @@ def get_gfs_data(datestr, utc_hour, area):
     """
 
     # Read requested date, time and  area
-    datestr = arg[1]
-    utc_hour = int(arg[2])
-    blat, tlat, llon, rlon = arg[3].split(',')
-    blat, tlat, llon, rlon = float(blat), float(tlat), float(llon), float(rlon)
 
     yyyy, mm, dd = int(datestr[0:4]), int(datestr[4:6]), int(datestr[6:8])
-    request_time = dt.datetime(yyyy, mm, dd, utc_hour)
-
+    request_time = dt.datetime(yyyy, mm, dd, int(utc_hour))
     # 
     url = 'http://nomads.ncep.noaa.gov/cgi-bin/filter_gens.pl'
     req = requests.get(url)
-    text = req.text.split('</a>')
+    if req.error is not None:
+        print "Could not connect! Error code: " % req.error
+        sys.exit()
+
+    text = req.content.split('</a>')
     available_days = []
     for t in text:
         if 'gefs' in t:
             available_days.append(t.split('gefs.')[-1])
 
-
-            url_base = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
-                'filter_gens.pl?dir=%2Fgefs.'
+    url_base = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
+        'filter_gens.pl?dir=%2Fgefs.'
 
     good_day = None
     good_init = None
@@ -51,7 +49,7 @@ def get_gfs_data(datestr, utc_hour, area):
 
         url = url_base+day
         req = requests.get(url)
-        text = req.text.split('</a>')
+        text = req.content.split('</a>')
         available_inits = []
         for t in text:
             if 'gefs' in t:
@@ -62,7 +60,8 @@ def get_gfs_data(datestr, utc_hour, area):
             hh2 = int(init)
             init_dt = dt.datetime(yyyy2, mm2, dd2, hh2)
             delta_t = request_time - init_dt
-            if delta_t.seconds < 0:
+
+            if delta_t.seconds < 0 or delta_t.days < 0:
                 continue
         
             # 00 06 12 18 ... for ensemble members
@@ -70,7 +69,7 @@ def get_gfs_data(datestr, utc_hour, area):
             # 00 03 06 09 12 ... for 0.5 and 1.0 deg main runs
             main_step = '%02d' % (3*int(delta_t.seconds/(3.*60*60)))
         
-            for ens in range(1, 21):
+            for ens in range(20, 21):
                 ens = '%02d' % ens
 
                 ens_url = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
@@ -91,12 +90,14 @@ def get_gfs_data(datestr, utc_hour, area):
                     str(rlon)+'&toplat='+str(tlat)+'&bottomlat='+str(blat)+ \
                     '&dir=%2Fgefs.'+day+'%2F'+init+'%2Fpgrb2'
             
-                print ens_url
+                if verbose:
+                    print ens_url
 
                 ens_out = 'ens_' + ens + '.grib2'
                 req = requests.get(ens_url)
 
                 if req.status_code != 200:
+                    print "Could not get ensemble data!"
                     break
 
                 print "Saving ensemble member %d" % int(ens)
@@ -109,6 +110,9 @@ def get_gfs_data(datestr, utc_hour, area):
 
                 if ens == '20':
                     break
+
+            if good_day is not None:
+                break
 
         if good_day is not None:
             break
@@ -130,10 +134,14 @@ def get_gfs_data(datestr, utc_hour, area):
         '&toplat='+str(tlat)+'&bottomlat='+str(blat)+'&dir=%2Fgfs.'+ \
         day+init
 
-    print ens_main_url
+    if verbose:
+        print ens_main_url
 
-    print "Saving ensemble main"
     req = requests.get(ens_main_url)
+    if req.status_code != 200:
+        print "Could not get ensemble main data!"
+        sys.exit()
+    print "Saving ensemble main"
     fid = open('ens_main.grib2', 'wb')
     fid.write(req.content)
     fid.close()
@@ -156,7 +164,8 @@ def get_gfs_data(datestr, utc_hour, area):
         str(llon)+'&rightlon='+str(rlon)+'&toplat='+str(tlat)+ \
         '&bottomlat='+str(blat)+'&dir=%2Fgfs.'+day+init+'%2Fmaster'
 
-    print main_url
+    if verbose:
+        print main_url
 
     print "Saving GFS main"
     req = requests.get(main_url)
@@ -198,7 +207,7 @@ if __name__ == '__main__':
 
     datestr = sys.argv[1]
     utc_hour = sys.argv[2]
-    blat, tlat, llon, rlon = sys.argv[3]
+    blat, tlat, llon, rlon = sys.argv[3].split(',')
     area = (float(blat), float(tlat), float(llon), float(rlon))
 
-    get_gfs_data(datestr, utc_hour, area)
+    get_gfs_data(datestr, utc_hour, area, verbose=True)
