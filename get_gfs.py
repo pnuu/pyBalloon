@@ -69,7 +69,7 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
             # 00 03 06 09 12 ... for 0.5 and 1.0 deg main runs
             main_step = '%02d' % (3*int(delta_t.seconds/(3.*60*60)))
         
-            for ens in range(20, 21):
+            for ens in range(1, 21):
                 ens = '%02d' % ens
 
                 ens_url = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
