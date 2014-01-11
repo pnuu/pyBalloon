@@ -40,9 +40,9 @@ if __name__ == "__main__":
 
     model_data = pyb_io.read_gfs_set(in_dir, 
                                     (lat0+1.5, lon0-1.5, 
-                                     lat0-0.5, lon0+1.5),
-                                     ens_main=None,
-                                     ens_member_pattern=None, alt0=alt0)
+                                     lat0-0.5, lon0+1.5))#,
+#                                     ens_main=None,
+#                                     ens_member_pattern=None, alt0=alt0)
 
     print 'GFS data read, %.1f s elapsed' % (time.time() - time0)
 
@@ -55,8 +55,17 @@ if __name__ == "__main__":
 
     print 'Trajectories calculated, %.1f s elapsed' % (time.time() - time0)
 
+    # highest point in main-run trajectory
+    idx, = np.where(trajectories[0]['alts'] == np.max(trajectories[0]['alts']))
+    latx, _ = trajectories[0]['lats'][idx]
+    lonx, _ = trajectories[0]['lons'][idx]
+    altx, _ = trajectories[0]['alts'][idx]
+    timex, _ = trajectories[0]['times'][idx]
+    print latx, lonx, altx, '%.0f minutes' % (timex)
+    other_info = [(latx, lonx, altx, 'Burst point', '%.0f minutes, %.0f meters' % (timex, altx))]
+
     kml_fname = '/tmp/pyballoon_trajectories.kml'
-    pyb_io.save_kml(kml_fname, trajectories)
+    pyb_io.save_kml(kml_fname, trajectories, other_info=other_info)
     
     print 'Program finished in %.1f s' % (time.time() - time0)
 

@@ -380,7 +380,8 @@ def save_kml(fname, data, model_start_idx=0,
         trajectories. Possible modes are 'end' and 'full'. Default:
         'end'
         - other_info -- Additional information to save into the KML
-        path: eg.  other_info = [(lat, lon, alt, 'marker text')]
+        path: eg.  other_info = [(lat, lon, alt, 'marker name', 
+                                  'marker description')]
 
     Todo:
         - modelled current location of the balloon
@@ -477,8 +478,19 @@ def save_kml(fname, data, model_start_idx=0,
         kml_str += '<coordinates>%f,%f</coordinates>\n' % \
             (dat['lons'][-1], dat['lats'][-1])
         kml_str += '</Point>\n'
-        kml_str += '</Placemark>'
+        kml_str += '</Placemark>\n'
         num += 1
+
+    # Add "other_info" places
+    for dat in other_info:
+        kml_str += '<Placemark>\n'
+        kml_str += '<name>'+dat[3]+'</name>\n'
+        kml_str += '<description>'+dat[4]+'</description>\n'
+        kml_str += '<Point>\n'
+        kml_str += '<coordinates>%f,%f,%f</coordinates>\n' % \
+            (dat[1], dat[0], dat[2])
+        kml_str += '</Point>\n'
+        kml_str += '</Placemark>\n'
 
     kml_str += '</Document>\n'
     kml_str += '</kml>\n'
