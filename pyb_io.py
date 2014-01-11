@@ -487,6 +487,7 @@ def save_kml(fname, data, model_start_idx=0,
         kml_str += '<name>'+dat[3]+'</name>\n'
         kml_str += '<description>'+dat[4]+'</description>\n'
         kml_str += '<Point>\n'
+        kml_str += '<altitudeMode>absolute</altitudeMode>\n'
         kml_str += '<coordinates>%f,%f,%f</coordinates>\n' % \
             (dat[1], dat[0], dat[2])
         kml_str += '</Point>\n'
