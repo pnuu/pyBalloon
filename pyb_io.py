@@ -482,16 +482,17 @@ def save_kml(fname, data, model_start_idx=0,
         num += 1
 
     # Add "other_info" places
-    for dat in other_info:
-        kml_str += '<Placemark>\n'
-        kml_str += '<name>'+dat[3]+'</name>\n'
-        kml_str += '<description>'+dat[4]+'</description>\n'
-        kml_str += '<Point>\n'
-        kml_str += '<altitudeMode>absolute</altitudeMode>\n'
-        kml_str += '<coordinates>%f,%f,%f</coordinates>\n' % \
-            (dat[1], dat[0], dat[2])
-        kml_str += '</Point>\n'
-        kml_str += '</Placemark>\n'
+    if other_info is not None:
+        for dat in other_info:
+            kml_str += '<Placemark>\n'
+            kml_str += '<name>'+dat[3]+'</name>\n'
+            kml_str += '<description>'+dat[4]+'</description>\n'
+            kml_str += '<Point>\n'
+            kml_str += '<altitudeMode>absolute</altitudeMode>\n'
+            kml_str += '<coordinates>%f,%f,%f</coordinates>\n' % \
+                (dat[1], dat[0], dat[2])
+            kml_str += '</Point>\n'
+            kml_str += '</Placemark>\n'
 
     kml_str += '</Document>\n'
     kml_str += '</kml>\n'
