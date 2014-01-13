@@ -41,6 +41,8 @@ def get_gfs_data(datestr, utc_hour, area, verbose=False):
     url_base = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
         'filter_gens.pl?dir=%2Fgefs.'
 
+    llon, rlon, llat, blat = area
+
     good_day = None
     good_init = None
 
@@ -211,3 +213,109 @@ if __name__ == '__main__':
     area = (float(blat), float(tlat), float(llon), float(rlon))
 
     get_gfs_data(datestr, utc_hour, area, verbose=True)
+
+
+
+'''
+
+rewrite-stuff:
+
+def get_available_days(run_type='main'):
+    srch = 'gfs'
+    url = 'http://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_hd.pl'
+
+    if run_type = 'ens':
+        srch = 'gefs'
+        url = 'http://nomads.ncep.noaa.gov/cgi-bin/filter_gens.pl'
+
+    while True:
+        try:
+            req = requests.get(url)
+            if req.error is not None:
+                print "Could not connect! Error code: " % req.error
+                sys.exit()
+            break
+        except:
+            print 'Request failed, retrying: ' + url
+
+    text = req.content.split('</a>')
+    available_days = []
+    for t in text:
+        if srch in t:
+            available_days.append(t.split(srch+'.')[-1])
+
+    available_dates = []
+    for d in available_days:
+        if run_type == 'main':
+            available_dates.append(dt.datetime(int(d[:4]), 
+                                               int(d[4:6]), 
+                                               int(d[6:8]), 
+                                               int(d[8:], 0, 0)))
+        else:
+            available_dates.append(dt.datetime(int(d[:4]), 
+                                               int(d[4:6]), 
+                                               int(d[6:]), 
+                                               0, 0, 0)) # 00 UTC
+
+    return available_dates
+
+
+def get_ens_inits(date):
+    
+    base_url = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
+        'filter_gens.pl?dir=%2Fgefs.'
+    srch = 'gefs'
+
+    while True:
+        try:
+            url = base_url + '%4d%02d%02d' % (date.year, 
+                                              date.month, 
+                                              date.day)
+
+            req = requests.get(url)
+
+            if req.error is not None:
+                print "Could not connect! Error code: " % req.error
+                sys.exit()
+            break
+        except:
+            print 'Request failed, retrying: ' + url
+
+    text = req.content.split('</a>')
+    available_inits = []
+    for t in text:
+        if srch in t:
+            hh = int(t.split(srch+'.')[-1].split('>')[-1])
+            available_inits.append(dt.datetime(date.year,
+                                               date.month,
+                                               date.day,
+                                               hh))
+
+    return available_inits
+
+
+def download_ensembles(date, ens_step, area):
+
+    blat, tlat, llon, rlon = area
+    day = "%4d%02d%02d" % (date.year, date.month, date.day)
+    init = "%02d" % (date.hour)
+    
+    ens_url = 'http://nomads.ncep.noaa.gov/cgi-bin/' \
+        'filter_gens.pl?file=gep'+ens+'.t'+init+ \
+        'z.pgrb2f'+ens_step+'&lev_1000_mb=on' \
+        '&lev_100_mb=on&lev_10_mb=on&' \
+        'lev_150_mb=on&lev_200_mb=on&lev_20_mb=on&' \
+        'lev_250_mb=on&lev_2_m_above_ground=on&' \
+        'lev_300_mb=on&lev_30_mb=on&lev_350_mb=on&' \
+        'lev_400_mb=on&lev_450_mb=on&lev_500_mb=on&' \
+        'lev_50_mb=on&lev_550_mb=on&lev_600_mb=on&' \
+        'lev_650_mb=on&lev_700_mb=on&lev_70_mb=on&' \
+        'lev_750_mb=on&lev_800_mb=on&lev_850_mb=on&' \
+        'lev_900_mb=on&lev_925_mb=on&lev_950_mb=on&' \
+        'lev_975_mb=on&lev_surface=on&' \
+        'var_HGT=on&var_TMP=on&var_UGRD=on&var_VGRD=on&' \
+        'subregion=&leftlon='+str(llon)+'&rightlon='+ \
+        str(rlon)+'&toplat='+str(tlat)+'&bottomlat='+str(blat)+ \
+        '&dir=%2Fgefs.'+day+'%2F'+init+'%2Fpgrb2'
+
+'''
