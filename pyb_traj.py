@@ -178,11 +178,11 @@ def calc_movements(data, loc0, balloon, live_data=None, alt_change_fit=10):
     output['times'] = np.cumsum(np.array(total_time))/60 # to minutes
     output['distance'] = distance_travelled
 
-    print "Maximum altitude", np.max(all_alts), \
-        'm, distance travelled %.1f:' % distance_travelled, 'km'
-    print 'Landing location', \
+    print("Maximum altitude", np.max(all_alts), \
+        'm, distance travelled %.1f:' % distance_travelled, 'km')
+    print('Landing location', \
         '%.3f, %.3f' % (output['lats'][-1], output['lons'][-1]), \
-        'after %d min of flight\n' % (int(output['times'][-1]))
+        'after %d min of flight\n' % (int(output['times'][-1])))
 
     return output
 

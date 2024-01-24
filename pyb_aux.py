@@ -98,7 +98,7 @@ def data_interpolation(data, alt0, step, mode='spline'):
     new_data['altitudes'] = np.arange(alt0, altitudes.max(), step)
     new_data['lats'] = data['lats']
     new_data['lons'] = data['lons']
-    for key in data.keys():
+    for key in list(data.keys()):
         if key != 'altitudes' and key != 'lats' and key != 'lons':
             new_arr = []
             d = data[key]

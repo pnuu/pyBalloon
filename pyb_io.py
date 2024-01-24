@@ -91,7 +91,7 @@ def read_gfs_file(fname, area=None, alt0=0, t_0=None, extra_data=None):
     else:
         temperatures = [t_0*np.ones(lats.shape)]
     altitudes = [alt0*np.ones(lats.shape)]
-    pressures = u_wind.keys()
+    pressures = list(u_wind.keys())
     pressures.append(max(pressures))
 
     # Put pressures in altitude order and use them as keys
@@ -176,13 +176,13 @@ def read_gfs_set(directory, area=None, alt0=0, main='gfs_main.grib2',
     all_data = []
 
     fname = os.path.join(directory, main)
-    print "Reading GFS operational run from", fname
+    print("Reading GFS operational run from", fname)
     main_run_data = read_gfs_file(fname, area=area, alt0=alt0)
     all_data.append(main_run_data)
 
     if ens_main is not None:
         fname = os.path.join(directory, ens_main)
-        print "Reading GFS ensemble main run from", fname
+        print("Reading GFS ensemble main run from", fname)
         if use_extra:
             ens_main_data = read_gfs_file(fname, 
                                           area=area,
@@ -200,7 +200,7 @@ def read_gfs_set(directory, area=None, alt0=0, main='gfs_main.grib2',
         ens_files.sort()
     
         for fname in ens_files:
-            print "Reading GFS ensemble member from", fname
+            print("Reading GFS ensemble member from", fname)
 
             if use_extra:
                 all_data.append(read_gfs_file(fname, 
